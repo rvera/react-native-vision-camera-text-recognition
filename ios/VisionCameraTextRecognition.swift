@@ -126,20 +126,15 @@ public class VisionCameraTextRecognition: FrameProcessorPlugin {
     }
 
     private static func processFrame(_ frameRect: CGRect) -> [String: CGFloat] {
-        let offsetX = (frameRect.midX - ceil(frameRect.width)) / 2.0
-        let offsetY = (frameRect.midY - ceil(frameRect.height)) / 2.0
-
-        let x = frameRect.maxX + offsetX
-        let y = frameRect.minY + offsetY
-
-        return [
-            "x": frameRect.midX + (frameRect.midX - x),
-            "y": frameRect.midY + (y - frameRect.midY),
+        let final = [
+            "x": frameRect.origin.x,
+            "y": frameRect.origin.y,
             "width": frameRect.width,
             "height": frameRect.height,
             "boundingCenterX": frameRect.midX,
             "boundingCenterY": frameRect.midY
-    ]
+        ]
+        return final;
     }
 
     private func getOrientation(orientation: UIImage.Orientation) -> UIImage.Orientation {
