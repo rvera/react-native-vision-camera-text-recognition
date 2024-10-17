@@ -59,7 +59,7 @@ public class VisionCameraTextRecognition: FrameProcessorPlugin {
         }
     }
 
-      static func processBlocks(blocks:[TextBlock]) -> Array<Any> {
+    public static func processBlocks(blocks:[TextBlock]) -> Array<Any> {
         var blocksArray : [Any] = []
         for block in blocks {
             var blockData : [String:Any] = [:]
