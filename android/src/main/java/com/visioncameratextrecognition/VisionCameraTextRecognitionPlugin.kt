@@ -63,6 +63,7 @@ class VisionCameraTextRecognitionPlugin(proxy: VisionCameraProxy, options: Map<S
     }
 
     companion object {
+        @JvmStatic
         fun getBlocks(blocks: MutableList<Text.TextBlock>): WritableNativeArray {
             val blockArray = WritableNativeArray()
             blocks.forEach { block ->
